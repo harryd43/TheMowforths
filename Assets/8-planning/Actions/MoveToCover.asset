@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4e8684b3c4a63f282ce3986cca8a03, type: 3}
+  m_Name: MoveToCover
+  m_EditorClassIdentifier: 
+  _preconditions:
+  - {fileID: 11400000, guid: b0698587c8818629cbb460234cac0391, type: 2}
+  _effects:
+  - {fileID: 11400000, guid: 679563e2f9304eb1ab24774e7a0421b0, type: 2}
+  _negativeEffects:
+  - {fileID: 11400000, guid: b0698587c8818629cbb460234cac0391, type: 2}
+  target: 0

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23cd6531d0aab0ea38ac6898a8f09269, type: 3}
+  m_Name: GoapAgent
+  m_EditorClassIdentifier: 
+  _actions:
+  - {fileID: 11400000, guid: 03a41a782c4d491dbbd169ffe070563e, type: 2}
+  - {fileID: 11400000, guid: 7af292f5ddf9450a7ba591756098c155, type: 2}
+  - {fileID: 11400000, guid: cd6383ce0c72570968ebd989192d82c3, type: 2}
+  _goals:
+  - {fileID: 11400000, guid: 3d10bf60013eaa83e893019e2506c7a3, type: 2}
+  - {fileID: 11400000, guid: d36a94b0fd73cfba6a1372b3d6c9457a, type: 2}
+  _knownPropositions:
+  - {fileID: 11400000, guid: d19d63505f5e6733d83d64bc3ef7188d, type: 2}
+  - {fileID: 11400000, guid: 679563e2f9304eb1ab24774e7a0421b0, type: 2}
+  - {fileID: 11400000, guid: 8e86346693a678a859db85182b186673, type: 2}
+  - {fileID: 11400000, guid: b0698587c8818629cbb460234cac0391, type: 2}
+  - {fileID: 11400000, guid: ecd56217b68450ef3b24896427e8810a, type: 2}
+  - {fileID: 11400000, guid: b8076c3556daa2b53a627f0f5d22874f, type: 2}
