@@ -34,7 +34,6 @@ public class MaccaController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             agent.SetDestination(hit.point);
-            Debug.Log("Macca moving to: " + hit.point);
         }
     }
 

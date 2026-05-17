@@ -35,7 +35,6 @@ public class AgentController : MonoBehaviour
         {
             agentRenderer.material.color = Color.yellow;
         }
-        Debug.Log(agentName + " selected");
     }
 
     public void Deselect()
@@ -52,14 +51,16 @@ public class AgentController : MonoBehaviour
     {
         if (navAgent != null)
         {
-            navAgent.SetDestination(destination);
-
             UtilityAgent utilityAgent = GetComponent<UtilityAgent>();
+            if (utilityAgent != null && !utilityAgent.CanAcceptGoal())
+            {
+                return;
+            }
+            navAgent.SetDestination(destination);
             if (utilityAgent != null)
             {
                 utilityAgent.SetGoal(destination);
             }
-            Debug.Log(agentName + "moveing to " + destination);
         }
     }
 }

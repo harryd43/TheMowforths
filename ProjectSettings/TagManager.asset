@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Smashable
+  - Grabbable
+  - Hostile
+  - Bombable
   layers:
   - Default
   - TransparentFX

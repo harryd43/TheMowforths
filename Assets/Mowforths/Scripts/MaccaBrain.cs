@@ -162,7 +162,6 @@ public class MaccaBrain : UtilityAgent
 
                 if (distanceToTarget <= smashRange)
                 {
-                    Debug.Log("MACCA SMASH: " + nearestTarget.name);
                     Destroy(nearestTarget);
                     nearestTarget = null;
                 }

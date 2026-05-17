@@ -10,6 +10,8 @@ public class UtilityAgent : MonoBehaviour
 
     [Header("Decision Making")]
     [SerializeField] private float decisionInterval = 0.2f; // how often to make a decision
+    [SerializeField] private float minimumActionDuration = 2f;
+    private float actionTimer = 0f;
 
     [Header("Debug")]
     [SerializeField] private bool showDebugText = false;
@@ -39,10 +41,9 @@ public class UtilityAgent : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (hasGoal && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance && !navMeshAgent.pathPending)
+        if (hasGoal && !navMeshAgent.pathPending && navMeshAgent.hasPath && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance + 0.5f)
         {
             hasGoal = false;
-            Debug.Log(agentController.agentName + " reached goal.");
         }
         decisionTimer -= Time.deltaTime;
 
@@ -61,6 +62,7 @@ public class UtilityAgent : MonoBehaviour
     void MakeDecision()
     {
         UpdateInputValues();
+
         UtilityAction bestAction = null;
         float bestScore = -1f;
 
@@ -74,16 +76,15 @@ public class UtilityAgent : MonoBehaviour
             }
         }
 
-        if (bestAction != null && bestAction != currentAction)
+        if (bestAction != null && (bestAction != currentAction))
         {
             currentAction = bestAction;
+            
 
             if (showDebugText && debugText != null)
             {
                 debugText.text = agentController.agentName + "\n" + currentAction.name + "\n(" + bestScore.ToString("F2") + ")";
             }
-
-            Debug.Log(agentController.agentName + " chose action: " + currentAction.name + " (score: " + bestScore.ToString("F2") + ")");
         }
     }
 
@@ -125,7 +126,7 @@ public class UtilityAgent : MonoBehaviour
         }
     }
 
-    public void SetGoal(Vector3 goal)
+    public virtual void SetGoal(Vector3 goal)
     {
         assignedGoal = goal;
         hasGoal = true;
@@ -142,5 +143,9 @@ public class UtilityAgent : MonoBehaviour
         debugText.color = Color.white;
         debugText.anchor = TextAnchor.MiddleCenter;
         debugText.alignment = TextAlignment.Center;
+    }
+    public virtual bool CanAcceptGoal()
+    {
+        return true;
     }
 }
