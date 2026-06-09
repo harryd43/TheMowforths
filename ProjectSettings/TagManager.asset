@@ -9,6 +9,9 @@ TagManager:
   - Grabbable
   - Hostile
   - Bombable
+  - Guard
+  - Bomb
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Blockers
   - 
   - 
   - 
